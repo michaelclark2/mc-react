@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from '../components/Header/Header';
+import Main from '../components/Main/Main';
 
 class App extends Component {
   render () {
     return (
       <div className="App">
-        <div className="columns">
-          <div className="column"></div>
-          <div className="column"><a href="" className="button">bulma included</a></div>
-        </div>
+        <Header />
+        <Main />
       </div>
     );
   }
