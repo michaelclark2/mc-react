@@ -1,0 +1,16 @@
+.Main {
+  position: relative;
+  flex: 1 1 auto;
+  margin: 0;
+  height: 100%;
+  .columns {
+    height: 100%;
+    margin: 0;
+  }
+  main {
+    overflow-y: auto;
+  }
+  aside {
+    background-color: lightcoral;
+  }
+}
