@@ -1,14 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {Route, BrowserRouter, Redirect, Switch} from 'react-router-dom';
 import './App.css';
-import Header from '../components/Header/Header';
-import Main from '../components/Main/Main';
 
-class App extends Component {
+import Header from '../components/Header/Header';
+import About from '../components/About/About';
+import Blog from '../components/Blog/Blog';
+import Projects from '../components/Projects/Projects';
+
+class App extends React.Component {
   render () {
     return (
       <div className="App">
         <Header />
-        <Main />
+        <BrowserRouter>
+          <main className="Main">
+            <Switch>
+              <Route path='/' exact component={About} />
+              <Route path='/blog' component={Blog} />
+              <Route path='/projects' component={Projects} />
+              <Redirect to='/' from='/:' />
+            </Switch>
+          </main>
+        </BrowserRouter>
       </div>
     );
   }
