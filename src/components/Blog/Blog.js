@@ -4,6 +4,12 @@ import './Blog.css';
 import About from '../About/About';
 
 class Blog extends React.Component {
+  state = {
+    blogs: [],
+  }
+  componentDidMount () {
+
+  }
   render () {
     return (
       <div className="Blog columns">

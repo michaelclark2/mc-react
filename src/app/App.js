@@ -7,6 +7,9 @@ import About from '../components/About/About';
 import Blog from '../components/Blog/Blog';
 import Projects from '../components/Projects/Projects';
 
+import connection from '../firebase/connection';
+connection();
+
 class App extends React.Component {
   render () {
     return (
