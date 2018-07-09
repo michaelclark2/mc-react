@@ -1,6 +1,6 @@
 import React from 'react';
 import './Blog.css';
-
+import {getBlogs} from '../../firebase/blogs';
 import About from '../About/About';
 
 class Blog extends React.Component {
@@ -8,7 +8,11 @@ class Blog extends React.Component {
     blogs: [],
   }
   componentDidMount () {
-
+    getBlogs().then(blogs => {
+      this.setState({blogs});
+    }).catch(err => {
+      console.error('Error getting blogs', err);
+    });
   }
   render () {
     return (
