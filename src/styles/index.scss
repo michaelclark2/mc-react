@@ -1,8 +1,10 @@
 @import 'bulma/bulma';
+@import './variables';
 
 body,html {
   height: 100%;
   overflow: hidden;
+  background-color: $main-color;
   #root {
     height: 100%;
   }
