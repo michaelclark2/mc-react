@@ -1,11 +1,12 @@
 import React from 'react';
 import './Blog.css';
 import {getBlogs} from '../../firebase/blogs';
-import About from '../About/About';
+import BlogPost from '../BlogPost/BlogPost';
 
 class Blog extends React.Component {
   state = {
     blogs: [],
+    selectedBlog: '',
   }
   componentDidMount () {
     getBlogs().then(blogs => {
@@ -15,11 +16,18 @@ class Blog extends React.Component {
     });
   }
   render () {
+    const blogPosts = this.state.blogs.map(blog => {
+      return (
+        <BlogPost blog={blog} key={blog.id} />
+      );
+    });
     return (
       <div className="Blog columns">
-        <aside className="column is-3">asidedd</aside>
+        <aside className="column is-3">
+          <h1>Blog titles go here</h1>
+        </aside>
         <main className="column">
-          <About/>
+          {blogPosts}
         </main>
       </div>
     );

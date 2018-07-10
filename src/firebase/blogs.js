@@ -16,9 +16,9 @@ const getBlogs = () => {
           a = moment(a.date);
           b = moment(b.date);
           if (a.isBefore(b)) {
-            return -1;
-          } else if (b.isBefore(a)) {
             return 1;
+          } else if (b.isBefore(a)) {
+            return -1;
           } else {
             return 0;
           }
