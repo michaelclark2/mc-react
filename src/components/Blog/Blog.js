@@ -26,9 +26,9 @@ class Blog extends React.Component {
     });
     const blogTitles = this.state.blogs.map(blog => {
       return (
-        <div key={blog.id} className="panel-block">
-          <a onClick={this.selectBlog} id={blog.id} className="content is-small">{blog.title}</a>
-        </div>
+        <a key={blog.id} className="panel-block">
+          <span onClick={this.selectBlog} id={blog.id} className="content is-small">{blog.title}</span>
+        </a>
       );
     });
     return (

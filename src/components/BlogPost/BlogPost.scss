@@ -1,4 +1,9 @@
+@import '../../styles/variables';
 .BlogPost {
+  &.box {
+    background-color: lighten($main-color, 50%);
+    color: $text-color;
+  }
   .subtitle {
     font-style: italic;
   }

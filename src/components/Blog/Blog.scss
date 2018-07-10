@@ -1,12 +1,27 @@
+@import '../../styles/variables';
 .Blog {
   main {
     overflow-y: auto;
   }
   aside {
-    background-color: lightcoral;
     overflow-y: auto;
   }
+  .panel {
+  }
+  .panel-heading {
+    background-color: $dark-color;
+    border-color: $light-color;
+    color: $text-color;
+  }
   .panel-block {
-    background-color: lighten(lightcoral, 20%);
+    background-color: white;
+    border-color: $light-color;
+    color: $link-color;
+    &:hover {
+      background-color: lighten($light-color, 20%);
+    }
+  }
+  .BlogPost p {
+    color: $text-color;
   }
 }

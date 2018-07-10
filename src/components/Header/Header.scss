@@ -1,7 +1,8 @@
+@import '../../styles/variables';
 .Header {
   height: 50px;
   flex: 0 0 auto;
-  background-color: aqua;
+  background-color: lighten($main-color, 20%);
   display: flex;
   flex-flow: row;
   align-items: center;
