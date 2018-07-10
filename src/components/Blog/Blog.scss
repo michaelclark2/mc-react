@@ -4,5 +4,9 @@
   }
   aside {
     background-color: lightcoral;
+    overflow-y: auto;
+  }
+  .panel-block {
+    background-color: lighten(lightcoral, 20%);
   }
 }
