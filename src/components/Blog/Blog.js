@@ -2,6 +2,7 @@ import React from 'react';
 import './Blog.css';
 import {getBlogs} from '../../firebase/blogs';
 import BlogPost from '../BlogPost/BlogPost';
+import BlogMenu from '../BlogMenu/BlogMenu';
 
 class Blog extends React.Component {
   state = {
@@ -24,23 +25,14 @@ class Blog extends React.Component {
         <BlogPost blog={blog} key={blog.id} />
       );
     });
-    const blogTitles = this.state.blogs.map(blog => {
-      return (
-        <a key={blog.id} className="panel-block">
-          <span onClick={this.selectBlog} id={blog.id} className="content is-small">{blog.title}</span>
-        </a>
-      );
-    });
     return (
       <div className="Blog columns">
         <aside className="column is-3">
-          <nav className="panel">
-            <p className="panel-heading">
-              Blog Posts
-            </p>
-            <a onClick={e => {this.setState({selectedBlog: ''})}} className="panel-block">View All</a>
-            {blogTitles}
-          </nav>
+          <BlogMenu
+            viewAll={() => this.setState({selectedBlog: ''})}
+            selectBlog={this.selectBlog}
+            blogs={this.state.blogs}
+          />
         </aside>
         <main className="column">
           {this.state.selectedBlog ? blogPosts.filter(component => component.props.blog.id === this.state.selectedBlog) : blogPosts}
