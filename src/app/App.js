@@ -1,11 +1,12 @@
 import React from 'react';
-import {Route, BrowserRouter, Redirect, Switch} from 'react-router-dom';
+import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import './App.css';
 
 import Header from '../components/Header/Header';
 import About from '../components/About/About';
 import Blog from '../components/Blog/Blog';
 import Projects from '../components/Projects/Projects';
+import Contact from '../components/Contact/Contact';
 
 import connection from '../firebase/connection';
 connection();
@@ -22,7 +23,7 @@ class App extends React.Component {
                 <Route path='/' exact component={About} />
                 <Route path='/blog' component={Blog} />
                 <Route path='/projects' component={Projects} />
-                <Redirect to='/' from='/:' />
+                <Route path='/contact' component={Contact} />
               </Switch>
             </main>
           </div>
