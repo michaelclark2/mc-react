@@ -14,16 +14,18 @@ class App extends React.Component {
   render () {
     return (
       <div className="App">
-        <Header />
         <BrowserRouter>
-          <main className="Main">
-            <Switch>
-              <Route path='/' exact component={About} />
-              <Route path='/blog' component={Blog} />
-              <Route path='/projects' component={Projects} />
-              <Redirect to='/' from='/:' />
-            </Switch>
-          </main>
+          <div className="app">
+            <Header />
+            <main className="Main">
+              <Switch>
+                <Route path='/' exact component={About} />
+                <Route path='/blog' component={Blog} />
+                <Route path='/projects' component={Projects} />
+                <Redirect to='/' from='/:' />
+              </Switch>
+            </main>
+          </div>
         </BrowserRouter>
       </div>
     );

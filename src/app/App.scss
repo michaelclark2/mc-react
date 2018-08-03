@@ -2,6 +2,9 @@
   display: flex;
   flex-flow: column nowrap;
   height: 100%;
+  .app {
+    height: 100%;
+  }
 }
 .Main {
   position: relative;
