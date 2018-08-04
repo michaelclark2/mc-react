@@ -2,6 +2,17 @@ import React from 'react';
 import './ContactForm.css';
 
 class ContactForm extends React.Component {
+  state = {
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  }
+  inputChange = (e) => {
+    const contactForm = {...this.state};
+    contactForm[e.target.id] = e.target.value;
+    this.setState(contactForm);
+  }
   render () {
     return (
       <div className="ContactForm box">
@@ -13,7 +24,7 @@ class ContactForm extends React.Component {
             <div className="field-body">
               <div className="field">
                 <p className="control is-expanded has-icons-left">
-                  <input className="input" type="text" placeholder="Name" id="name" required />
+                  <input onChange={this.inputChange} value={this.state.name} className="input" type="text" placeholder="Name" id="name" required />
                   <span className="icon is-small is-left">
                     <i className="fas fa-user"></i>
                   </span>
@@ -21,7 +32,7 @@ class ContactForm extends React.Component {
               </div>
               <div className="field">
                 <p className="control is-expanded has-icons-left has-icons-right">
-                  <input className="input" type="email" placeholder="Email" id="email" required />
+                  <input onChange={this.inputChange} value={this.state.email} className="input" type="email" placeholder="Email" id="email" required />
                   <span className="icon is-small is-left">
                     <i className="fas fa-envelope"></i>
                   </span>
@@ -37,7 +48,7 @@ class ContactForm extends React.Component {
             <div className="field-body">
               <div className="field">
                 <div className="control">
-                  <input className="input" type="text" placeholder="Subject" id="subject" required />
+                  <input onChange={this.inputChange} value={this.state.subject} className="input" type="text" placeholder="Subject" id="subject" required />
                 </div>
               </div>
             </div>
@@ -50,7 +61,7 @@ class ContactForm extends React.Component {
             <div className="field-body">
               <div className="field">
                 <div className="control">
-                  <textarea className="textarea" placeholder="Write me a message..." id="message" required></textarea>
+                  <textarea onChange={this.inputChange} value={this.state.message} className="textarea" placeholder="Write me a message..." id="message" required></textarea>
                 </div>
               </div>
             </div>
