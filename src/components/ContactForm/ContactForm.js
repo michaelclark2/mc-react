@@ -1,21 +1,52 @@
 import React from 'react';
 import './ContactForm.css';
 
+import postMessage from '../../firebase/messages';
+
 class ContactForm extends React.Component {
   state = {
     name: '',
     email: '',
     subject: '',
     message: '',
+    isSent: false,
   }
   inputChange = (e) => {
     const contactForm = {...this.state};
+    contactForm.isSent = false;
     contactForm[e.target.id] = e.target.value;
     this.setState(contactForm);
+  }
+  sendMessage = (e) => {
+    e.preventDefault();
+    const msg = this.state;
+    delete msg.isSent;
+    postMessage(msg)
+      .then(() => {
+        this.setState({
+          isSent: true,
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      })
+      .catch(err => {
+        console.error('Error sending message', err);
+      });
   }
   render () {
     return (
       <div className="ContactForm box">
+        {
+          this.state.isSent ? (
+            <div className="notification is-success has-text-centered">
+              Thank you for your message!
+            </div>
+          ) : (
+            null
+          )
+        }
         <form id="contactForm">
           <div className="field is-horizontal">
             <div className="field-label is-normal">
@@ -69,15 +100,12 @@ class ContactForm extends React.Component {
 
           <div className="field is-grouped is-grouped-centered">
             <div className="control">
-              <button type="submit" className="button is-primary" id="sendMessage">
+              <button type="submit" className="button is-primary" onClick={this.sendMessage}>
                 Send
               </button>
             </div>
           </div>
         </form>
-        <div className="notification is-success is-hidden has-text-centered" id="msgSuccess">
-            Thank you for your message!
-        </div>
       </div>
     );
   }
