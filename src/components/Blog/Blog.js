@@ -28,6 +28,7 @@ class Blog extends React.Component {
     return (
       <div className="Blog columns">
         <aside className="column is-3">
+          <h1 className="title is-3">Blog</h1>
           <BlogMenu
             viewAll={() => this.setState({selectedBlog: ''})}
             selectBlog={this.selectBlog}
