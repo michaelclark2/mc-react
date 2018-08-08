@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 .Header {
   height: 50px;
   flex: 0 0 auto;
@@ -6,6 +7,11 @@
   display: flex;
   flex-flow: row;
   align-items: center;
+  justify-content: space-between;
+  @media (max-width: 510px) {
+    height: 100px;
+    flex-flow: column;
+  }
   .navbar-list {
     height: 100%;
     li {
@@ -13,29 +19,30 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      width: 100px;
-      height: 100%;
+      width: 75px;
       margin: 0 10px;
-      background-color: $light-color;
-      &:hover {
-        background-color: $dark-color;
-      }
       a {
         height: 100%;
         width: 100%;
         color: $link-color;
-        font-size: 1.5em;
+        font-size: 1em;
         line-height: 50px;
+        &:hover {
+          color: $accent-color;
+        }
         &.active {
           font-weight: bold;
-          background-color: lighten($main-color, 30%);
+          color: $highlight-color;
+          text-shadow: 0 0 5px $accent-color;
         }
       }
     }
   }
   h1 {
     font-size: 2em;
-    font-weight: bold;
+    font-weight: 900;
+    color: $dark-color;
     margin: 0 10px;
+    font-family: "Varela Round";
   }
 }

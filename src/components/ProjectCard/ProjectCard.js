@@ -5,7 +5,7 @@ class ProjectCard extends React.Component {
   render () {
     const {project, isSelected} = this.props;
     return (
-      <div className={isSelected ? 'ProjectCard column is-8 is-offset-2 selected' : 'ProjectCard column is-half'}>
+      <div className={isSelected ? 'ProjectCard column is-8 is-offset-2' : 'ProjectCard column is-half'}>
         <div className="card">
           <div className="card-image">
             <figure className={isSelected ? 'image is-16by9' : 'image is-square'}>

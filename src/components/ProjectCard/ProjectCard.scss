@@ -2,9 +2,6 @@
   .image > img {
     object-fit: contain;
   }
-  &.selected {
-    order: -1;
-  }
   .card-header-title {
     justify-content: center;
   }
