@@ -39,6 +39,11 @@ class Projects extends React.Component {
           isSelected={selectedProjectId === p.id}
         />
       );
+    }).sort((a, b) => {
+      if (b.props.isSelected) {
+        return 1;
+      }
+      return 0;
     });
     const projectTitles = projects.map(p => {
       return (
