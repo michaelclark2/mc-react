@@ -31,6 +31,7 @@ class BlogMenu extends React.Component {
     this.setState({selectedBlog: e.target.id});
   }
   render () {
+    // Creates array of blogGroups based on year and month
     const createBlogGroups = () => {
       const {blogs} = this.props;
       const blogGroup = [];
@@ -50,53 +51,60 @@ class BlogMenu extends React.Component {
           blogGroup.push(newGroup);
         }
       });
-      return blogGroup;
+      // Reverse for chronoligical menu
+      return blogGroup.reverse();
     };
+    // Create array of all years
     const blogMenu = createBlogGroups().reduce((arr, curr) => {
       if (!arr.includes(curr.year)) {
         arr.push(curr.year);
       }
       return arr;
-    }, []).map(year => {
-      return (
-        <div key={year}>
-          <p className="menu-label">{year}</p>
-          {
-            createBlogGroups().filter(x => x.year === year).reduce((arr, curr) => {
-              if (!arr.includes(curr.month)) {
-                arr.push(curr.month);
-              }
-              return arr;
-            }, []).map(month => {
-              return (
-                <ul key={month + year} className="menu-list">
-                  <li><a onClick={(e) => this.selectMonthAndYear(month, year)} className={this.state.selectedMonth === month && this.state.selectedYear === year ? 'is-active' : ''}>{month}</a></li>
-                  <li>
-                    <ul className={this.state.selectedMonth !== month || this.state.selectedYear !== year ? 'is-hidden' : ''}>
-                      {
-                        createBlogGroups().filter(x => x.month === month && x.year === year).map(blog => {
-                          return blog.blogs.map(post => {
-                            if (this.state.selectedBlog === post.id) {
-                              return (<li key={post.id}><a className="is-active" id={post.id} onClick={this.selectBlog}>{post.title}</a></li>);
-                            } else {
-                              return (<li key={post.id}><a id={post.id} onClick={this.selectBlog}>{post.title}</a></li>);
+    }, [])
+      // Map over years, create labels for years
+      .map(year => {
+        return (
+          <div key={year}>
+            <p className="menu-label">{year}</p>
+            {
+              // Create array of months in current year
+              createBlogGroups().filter(x => x.year === year).reduce((arr, curr) => {
+                if (!arr.includes(curr.month)) {
+                  arr.push(curr.month);
+                }
+                return arr;
+              }, [])
+                // Map over months array, create menu-lists for months
+                .map(month => {
+                  return (
+                    <ul key={month + year} className="menu-list">
+                      <li><a onClick={(e) => this.selectMonthAndYear(month, year)} className={this.state.selectedMonth === month && this.state.selectedYear === year ? 'is-active' : ''}>{month}</a></li>
+                      <li>
+                        <ul className={this.state.selectedMonth !== month || this.state.selectedYear !== year ? 'is-hidden' : ''}>
+                          {
+                            // Map over blogs in current month of current year, create blog-title elements
+                            createBlogGroups().filter(x => x.month === month && x.year === year).map(blog => {
+                              return blog.blogs.map(post => {
+                                if (this.state.selectedBlog === post.id) {
+                                  return (<li key={post.id}><a className="blog-title is-active" id={post.id} onClick={this.selectBlog}>{post.title}</a></li>);
+                                } else {
+                                  return (<li key={post.id}><a className="blog-title" id={post.id} onClick={this.selectBlog}>{post.title}</a></li>);
 
-                            }
-                          });
-                        })
-                      }
+                                }
+                              });
+                            })
+                          }
+                        </ul>
+                      </li>
                     </ul>
-                  </li>
-                </ul>
-              );
-            })
-          }
-        </div>
-      );
-    });
+                  ); // end menu-list, .map(month)
+                })
+            }
+          </div>
+        ); // end menu-label, .map(year)
+      });
     return (
       <aside className="BlogMenu menu is-small">
-        <h1 className="title is-3">Blog</h1>
         <button className="button is-small" onClick={this.viewAll}>View All</button>
         {blogMenu}
       </aside>
