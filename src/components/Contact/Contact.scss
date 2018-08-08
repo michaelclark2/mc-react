@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.Contact {
+  .menu {
+    padding: 1em;
+    border: 1px solid $accent-color;
+    border-radius: 4px;
+    .is-active {
+      background-color: $highlight-color;
+    }
+  }
+}

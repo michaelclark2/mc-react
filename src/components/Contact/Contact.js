@@ -7,11 +7,14 @@ class Contact extends React.Component {
     return (
       <div className="Contact columns">
         <aside className="column is-3">
-          <ul>
-            <li>GitHub</li>
-            <li>LinkedIn</li>
-            <li>Another one</li>
-          </ul>
+          <h1 className="title is-3">Contact</h1>
+          <div className="menu">
+            <ul className="menu-list">
+              <li><a target="_blank" rel="noopener noreferrer" href="https://www.github.com/michaelclark2">GitHub</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/michaelwclark2/">LinkedIn</a></li>
+              <li><a target="_blank" rel="noopener noreferrer" href="https://codepen.io/greasewizard/">CodePen</a></li>
+            </ul>
+          </div>
         </aside>
         <main className="column">
           <ContactForm />

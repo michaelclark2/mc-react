@@ -48,6 +48,7 @@ class ContactForm extends React.Component {
           )
         }
         <form id="contactForm">
+          <h1 className="title has-text-centered">Email Me</h1>
           <div className="field is-horizontal">
             <div className="field-label is-normal">
               <label className="label">From</label>
