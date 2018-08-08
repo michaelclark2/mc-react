@@ -3,9 +3,11 @@
 
 body,html {
   height: 100%;
-  overflow: hidden;
   background-color: $main-color;
   #root {
     height: 100%;
+  }
+  @media (min-width: 726px) {
+    overflow: hidden;
   }
 }

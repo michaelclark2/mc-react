@@ -1,13 +1,14 @@
 @import '../../styles/variables';
 .Blog {
+  color: $text-color;
   main {
     overflow-y: auto;
   }
   aside {
     overflow-y: auto;
-    background-color: $accent-color;
-  }
-  .BlogPost p {
-    color: $text-color;
+    background-color: $main-color;
+    .is-active {
+      background-color: $highlight-color;
+    }
   }
 }
