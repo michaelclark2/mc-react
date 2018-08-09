@@ -6,6 +6,9 @@
   }
   aside {
     overflow-y: auto;
-    background-color: $main-color;
+    background-color: $dark-color;
+    .title {
+      color: $main-color;
+    }
   }
 }

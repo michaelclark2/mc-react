@@ -11,16 +11,26 @@
     button {
       margin-bottom: 1em;
     }
+    a {
+      color: $main-color;
+      &:not(.is-active):hover {
+        color: $dark-color;
+      }
+    }
   }
   .menu-label {
-    background-color: $dark-color;
-    color: $main-color;
-    text-align: center;
+    background-color: $accent-color;
+    color: $dark-color;
+
   }
   .menu-list li ul {
     border-color: $accent-color;
+
   }
   .blog-title {
     overflow-wrap: break-word;
+    &:not(.is-active):hover {
+      color: $dark-color;
+    }
   }
 }
