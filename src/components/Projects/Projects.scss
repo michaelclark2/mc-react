@@ -4,8 +4,17 @@
     overflow-y: auto;
   }
   aside {
-    background-color: $main-color;
+    background-color: $dark-color;
+    .title {
+      color: $main-color;
+    }
     .menu {
+      a {
+        color: $main-color;
+        &:not(.is-active):hover {
+          color: $dark-color;
+        }
+      }
       padding: 1em;
       border: 1px solid $accent-color;
       border-radius: 4px;

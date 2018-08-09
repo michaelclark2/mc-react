@@ -20,20 +20,22 @@ class ContactForm extends React.Component {
   sendMessage = (e) => {
     e.preventDefault();
     const msg = this.state;
-    delete msg.isSent;
-    postMessage(msg)
-      .then(() => {
-        this.setState({
-          isSent: true,
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
+    if (msg.name && msg.email && msg.subject && msg.message) {
+      delete msg.isSent;
+      postMessage(msg)
+        .then(() => {
+          this.setState({
+            isSent: true,
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+          });
+        })
+        .catch(err => {
+          console.error('Error sending message', err);
         });
-      })
-      .catch(err => {
-        console.error('Error sending message', err);
-      });
+    }
   }
   render () {
     return (
@@ -101,7 +103,7 @@ class ContactForm extends React.Component {
 
           <div className="field is-grouped is-grouped-centered">
             <div className="control">
-              <button type="submit" className="button is-primary" onClick={this.sendMessage}>
+              <button type="submit" className="button" onClick={this.sendMessage}>
                 Send
               </button>
             </div>

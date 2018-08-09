@@ -1,12 +1,21 @@
 @import '../../styles/variables';
 
 .Contact {
+  aside {
+    background-color: $dark-color;
+    .title {
+      color: $main-color;
+    }
+  }
   .menu {
     padding: 1em;
     border: 1px solid $accent-color;
     border-radius: 4px;
-    .is-active {
-      background-color: $highlight-color;
+    a {
+      color: $main-color;
+      &:not(.is-active):hover {
+        color: $dark-color;
+      }
     }
   }
 }
