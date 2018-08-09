@@ -1,12 +1,12 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import './Header.css';
 
 class Header extends React.Component {
   render () {
     return (
       <nav className="Header">
-        <h1>Michael Clark</h1>
+        <h1><Link to="/">Michael Clark</Link></h1>
         <ul className="navbar-list">
           <li>
             <NavLink to="/blog">Blog</NavLink>
