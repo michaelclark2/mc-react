@@ -2,11 +2,22 @@
 .About {
   height: 100%;
   overflow-y: auto;
+  .hero {
+    min-height: 100%;
+  }
   .title {
     font-size: 4em;
   }
   .subtitle {
     font-size: 2em;
+  }
+  .down {
+    font-size: 4em;
+    color: white;
+    position: relative;
+    top: 150px;
+    animation: bounce 2s infinite;
+
   }
   .intro {
     background-color: $dark-color;
@@ -15,11 +26,38 @@
       color: $main-color;
     }
   }
-  .techs {
-    .column.techs {
-      display: flex;
-      flex-flow: row wrap;
-      align-content: center;
+  .work {
+    background-color: $dark-color;
+    .title,
+    .subtitle {
+      color: $main-color;
     }
+  }
+.column.hero-title {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}
+  .work {
+    .column.hero-title {
+      .title,
+      .subtitle {
+        width: 100%;
+      }
+      @media (min-width: 750px) {
+        order: 1;
+      }
+    }
+  }
+}
+@keyframes bounce {
+  0% {
+    top: 150px;
+  }
+  50% {
+    top: 160px;
+  }
+  100% {
+    top: 150px;
   }
 }
