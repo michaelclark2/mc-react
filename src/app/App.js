@@ -4,7 +4,6 @@ import './App.css';
 
 import Header from '../components/Header/Header';
 import About from '../components/About/About';
-import Blog from '../components/Blog/Blog';
 import Projects from '../components/Projects/Projects';
 import Contact from '../components/Contact/Contact';
 
@@ -21,7 +20,6 @@ class App extends React.Component {
             <main className="Main">
               <Switch>
                 <Route path='/' exact component={About} />
-                <Route path='/blog' component={Blog} />
                 <Route path='/projects' component={Projects} />
                 <Route path='/contact' component={Contact} />
               </Switch>
