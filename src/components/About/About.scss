@@ -4,6 +4,9 @@
   overflow-y: auto;
   .hero {
     min-height: 100%;
+    .hero-body {
+      padding: 0;
+    }
   }
   .title {
     font-size: 4em;
