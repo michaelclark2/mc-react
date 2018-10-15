@@ -5,17 +5,16 @@ const techs = {
   HTML: 'devicon-html5-plain colored',
   CSS: 'devicon-css3-plain colored',
   JavaScript: 'devicon-javascript-plain colored',
+  React: 'devicon-react-original colored',
   'C#': 'devicon-csharp-plain colored',
-  jQuery: 'devicon-jquery-plain-wordmark colored',
+  'SQL Server': 'fas fa-database',
+  jQuery: 'devicon-jquery-plain colored',
   Git: 'devicon-git-plain colored',
   GitHub: 'devicon-github-plain colored',
   Bootstrap: 'devicon-bootstrap-plain colored',
-  npm: 'fab fa-npm',
   Grunt: 'devicon-grunt-plain colored',
-  webpack: 'devicon-webpack-plain colored',
   Sass: 'devicon-sass-original colored',
-  React: 'devicon-react-original colored',
-  Slack: 'fab fa-slack-hash',
+  'Visual Studio': 'devicon-visualstudio-plain colored',
   Illustrator: 'devicon-illustrator-line colored',
   Photoshop: 'devicon-photoshop-line colored',
 };
@@ -30,7 +29,7 @@ class Technologies extends React.Component {
             const className = tech[1];
             return (
               <div key={name} className="column is-3">
-                <i className={className}></i>
+                <abbr title={name}><i className={className}></i></abbr>
               </div>
             );
           })
