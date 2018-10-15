@@ -8,6 +8,7 @@ const techs = {
   React: 'devicon-react-original colored',
   'C#': 'devicon-csharp-plain colored',
   'SQL Server': 'fas fa-database',
+  Firebase: 'firebase',
   jQuery: 'devicon-jquery-plain colored',
   Git: 'devicon-git-plain colored',
   GitHub: 'devicon-github-plain colored',

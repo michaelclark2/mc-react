@@ -4,5 +4,15 @@
   }
   i {
     font-size: 5em;
+    &.fa-database {
+      margin-left: 3px;
+    }
+  }
+  abbr > .firebase {
+    height: 105px;
+    width: auto;
+    margin: -15px 0;
+    margin-left: -20px;
+    content: url(./img/firebase.png);
   }
 }
