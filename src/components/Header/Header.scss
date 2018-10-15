@@ -1,17 +1,13 @@
 @import '../../styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 .Header {
-  height: 50px;
+  height: 100px;
   flex: 0 0 auto;
   background-color: lighten($main-color, 20%);
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 510px) {
-    height: 100px;
-    flex-flow: column;
-  }
   .navbar-list {
     height: 100%;
     li {

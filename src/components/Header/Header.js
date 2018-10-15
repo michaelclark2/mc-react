@@ -9,9 +9,6 @@ class Header extends React.Component {
         <h1><Link to="/">Michael Clark</Link></h1>
         <ul className="navbar-list">
           <li>
-            <NavLink to="/blog">Blog</NavLink>
-          </li>
-          <li>
             <NavLink to="/projects">Projects</NavLink>
           </li>
           <li>
