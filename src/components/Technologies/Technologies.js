@@ -1,5 +1,5 @@
 import React from 'react';
-import './Technologies.css';
+import './Technologies.scss';
 
 const techs = {
   HTML: 'devicon-html5-plain colored',
