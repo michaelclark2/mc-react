@@ -1,6 +1,6 @@
 import React from 'react';
 import Technologies from '../Technologies/Technologies';
-import './About.css';
+import './About.scss';
 
 class About extends React.Component {
   render () {

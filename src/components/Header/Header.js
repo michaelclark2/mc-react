@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
-import './Header.css';
+import './Header.scss';
 
 class Header extends React.Component {
   render () {
