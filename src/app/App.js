@@ -13,20 +13,16 @@ connection();
 class App extends React.Component {
   render () {
     return (
-      <div className="App">
-        <BrowserRouter>
-          <div className="app">
-            <Header />
-            <main className="Main">
-              <Switch>
-                <Route path='/' exact component={About} />
-                <Route path='/projects' component={Projects} />
-                <Route path='/contact' component={Contact} />
-              </Switch>
-            </main>
-          </div>
-        </BrowserRouter>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path='/' exact component={About} />
+            <Route path='/projects' component={Projects} />
+            <Route path='/contact' component={Contact} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

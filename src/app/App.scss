@@ -1,18 +1,3 @@
 .App {
-  display: flex;
-  flex-flow: column nowrap;
-  height: 100%;
-  .app {
-    height: 100%;
-  }
-}
-.Main {
-  position: relative;
-  flex: 1 1 auto;
-  margin: 0;
-  height: calc(100% - 100px);
-  .columns {
-    height: 100%;
-    margin: 0;
-  }
+
 }

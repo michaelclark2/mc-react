@@ -1,8 +1,6 @@
 @import '../../styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 .Header {
-  height: 100px;
-  flex: 0 0 auto;
   background-color: lighten($main-color, 20%);
   display: flex;
   flex-flow: column;
