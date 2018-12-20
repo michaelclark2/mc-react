@@ -17,7 +17,7 @@ const techs = {
   Sass: 'devicon-sass-original colored',
   'Visual Studio': 'devicon-visualstudio-plain colored',
   Illustrator: 'devicon-illustrator-line colored',
-  Photoshop: 'devicon-photoshop-line colored',
+  Photoshop: 'devicon-photoshop-line colored'
 };
 
 class Technologies extends React.Component {
