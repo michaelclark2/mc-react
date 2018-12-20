@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .NavItems {
-  margin-top: 10px;
+  margin: 10px;
   li {
     display: inline-flex;
     align-items: center;
@@ -14,15 +14,14 @@
       color: $link-color;
       font-size: 1em;
       font-weight: 400;
-      line-height: 50px;
       text-shadow: 0;
       &:hover:not(.active) {
         animation: pullup .5s forwards;
       }
       &.active {
-        border-radius: 5px 5px 0 0;
         font-weight: bold;
-        box-shadow: $tab-shadow;
+        box-shadow: $box-shadow;
+        border: 1px solid $main-color;
       }
       @keyframes pullup {
         from {

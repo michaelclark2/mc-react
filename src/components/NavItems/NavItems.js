@@ -10,7 +10,7 @@ class NavItems extends React.Component {
           <NavLink to="/projects">Projects</NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Blog</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
         </li>
         <li>
           <NavLink to="/contact">Contact</NavLink>
