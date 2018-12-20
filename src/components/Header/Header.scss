@@ -13,10 +13,35 @@
   justify-content: space-between;
   z-index: 5;
 
+  @keyframes shrink {
+    from {
+      max-height: 100px;
+      opacity: 1;
+    }
+    to {
+      max-height: 0px;
+      opacity: 0;
+    }
+  }
+  @keyframes unshrink {
+    from {
+      max-height: 0px;
+      opacity: 0;
+    }
+    to {
+      max-height: 100px;
+      opacity: 1;
+    }
+  }
   .shrink {
-    background-color: tomato;
+    animation: shrink 1s normal forwards;
+  }
+  .unshrink {
+    animation: unshrink .5s normal forwards;
   }
   .title {
+    overflow-y: hidden;
+    max-height: 100px;
     margin: 0;
   }
   h1 a {

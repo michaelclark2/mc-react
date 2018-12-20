@@ -6,21 +6,23 @@ import NavItems from '../NavItems/NavItems';
 class Header extends React.Component {
 
   state = {
-    isHidden: false
+    isHidden: false,
+    prevScrolled: false
   }
   componentDidMount () {
     window.onscroll = (e) => {
       const y = window.pageYOffset || document.documentElement.scrollTop;
       if (y > 100) {
-        this.setState({isHidden: true});
+        this.setState({isHidden: true, prevScrolled: false});
       }
-      else {
-        this.setState({isHidden: false});
+      else if (this.state.isHidden && y < 100) {
+        this.setState({isHidden: false, prevScrolled: true});
       }
     };
   }
   render () {
-    const hiddenClass = this.state.isHidden ? 'title shrink' : 'title';
+    let hiddenClass = this.state.isHidden ? 'title shrink' : 'title';
+    hiddenClass = this.state.prevScrolled ? hiddenClass + ' unshrink' : hiddenClass;
     return (
       <nav className="Header">
         <div className={hiddenClass}>
