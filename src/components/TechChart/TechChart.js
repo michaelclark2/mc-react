@@ -22,17 +22,23 @@ class TechChart extends React.Component {
     series.slices.template.cornerRadius = 10;
     series.slices.template.innerCornerRadius = 7;
     series.slices.template.inert = true;
+    series.labels.template.disabled = true;
+    series.ticks.template.disabled = true;
 
     series.hiddenState.properties.startAngle = 90;
     series.hiddenState.properties.endAngle = 90;
 
     chart.legend = new am4charts.Legend();
+    chart.legend.position = 'right';
 
     this.chart = chart;
   }
   componentDidUpdate (prevProps) {
     if (prevProps.data.length !== this.props.data.length)
-      this.chart.data = this.props.data;
+      this.chart.data = this.props.data.sort((a, b) => {
+        if (a.lines === b.lines) return 0;
+        return a.lines > b.lines ? -1 : 1;
+      });
   }
   componentWillUnmount () {
     if (this.chart) {
