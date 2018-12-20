@@ -5,9 +5,12 @@ import './NavItems.scss';
 class NavItems extends React.Component {
   render () {
     return (
-      <ul className='NavItems navbar-list'>
+      <ul className='NavItems'>
         <li>
           <NavLink to="/projects">Projects</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact">Blog</NavLink>
         </li>
         <li>
           <NavLink to="/contact">Contact</NavLink>
