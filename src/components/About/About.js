@@ -6,7 +6,7 @@ class About extends React.Component {
   render () {
     return (
       <div className="About">
-        <figure class="image profile">
+        <figure className="image profile">
           <img className="is-rounded" src="https://picsum.photos/500/500/?random" alt="profile pic"/>
         </figure>
         <div className="about-me">
