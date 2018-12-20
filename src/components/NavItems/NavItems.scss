@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+
+.NavItems {
+  margin: 10px;
+  li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 75px;
+    margin: 0 10px;
+    a {
+      height: 100%;
+      width: 100%;
+      color: $link-color;
+      font-size: 1em;
+      line-height: 50px;
+      &:hover {
+        color: $accent-color;
+      }
+      &.active {
+        font-weight: bold;
+        color: $highlight-color;
+        text-shadow: 0 0 5px $accent-color;
+      }
+    }
+  }
+}

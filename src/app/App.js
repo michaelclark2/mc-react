@@ -11,16 +11,24 @@ import connection from '../firebase/connection';
 connection();
 
 class App extends React.Component {
+
+  componentDidMount () {
+    const headerHeight = document.querySelector('.Header').offsetHeight;
+    document.querySelector('main').style.marginTop = (headerHeight + 20) + 'px';
+  }
+
   render () {
     return (
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Switch>
-            <Route path='/' exact component={About} />
-            <Route path='/projects' component={Projects} />
-            <Route path='/contact' component={Contact} />
-          </Switch>
+          <main className='container-height'>
+            <Switch>
+              <Route path='/' exact component={About} />
+              <Route path='/projects' component={Projects} />
+              <Route path='/contact' component={Contact} />
+            </Switch>
+          </main>
         </div>
       </BrowserRouter>
     );

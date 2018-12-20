@@ -1,20 +1,33 @@
 import React from 'react';
-import {NavLink, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './Header.scss';
+import NavItems from '../NavItems/NavItems';
 
 class Header extends React.Component {
+
+  state = {
+    isHidden: false
+  }
+  componentDidMount () {
+    window.onscroll = (e) => {
+      const y = window.pageYOffset || document.documentElement.scrollTop;
+      if (y > 100) {
+        this.setState({isHidden: true});
+      }
+      else {
+        this.setState({isHidden: false});
+      }
+    };
+  }
   render () {
+    const hiddenClass = this.state.isHidden ? 'title shrink' : 'title';
     return (
       <nav className="Header">
-        <h1><Link to="/">Michael Clark</Link></h1>
-        <ul className="navbar-list">
-          <li>
-            <NavLink to="/projects">Projects</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-        </ul>
+        <div className={hiddenClass}>
+          <h1><Link to="/">Michael Clark</Link></h1>
+          <h2 className="subtitle">Full Stack Developer</h2>
+        </div>
+        <NavItems/>
       </nav>
     );
   }
