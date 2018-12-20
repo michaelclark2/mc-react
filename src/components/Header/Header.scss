@@ -14,30 +14,33 @@
   z-index: 5;
 
   @keyframes shrink {
-    from {
+    0% {
       max-height: 100px;
       opacity: 1;
     }
-    to {
+    75% {
+      opacity: 0;
+    }
+    100% {
       max-height: 0px;
       opacity: 0;
     }
   }
   @keyframes unshrink {
-    from {
+    0% {
       max-height: 0px;
       opacity: 0;
     }
-    to {
+    100% {
       max-height: 100px;
       opacity: 1;
     }
   }
   .shrink {
-    animation: shrink 1s normal forwards;
+    animation: shrink 400ms normal linear forwards;
   }
   .unshrink {
-    animation: unshrink .5s normal forwards;
+    animation: unshrink 200ms normal linear forwards;
   }
   .title {
     overflow-y: hidden;
