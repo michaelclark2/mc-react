@@ -1,12 +1,66 @@
+@import '../../styles/variables';
+
 .TechChart {
   height: 500px;
-  .bar:nth-child(1) {
-    background-color: lightcoral;
+  .columns {
+    height: 100%;
   }
-  .bar:nth-child(2) {
-    background-color: goldenrod;
+  .legend {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-content: space-between;
   }
-  .bar:nth-child(3) {
-    background-color: springgreen;
+  .legend-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
   }
+  .legend-marker {
+    height: 50px;
+    width: 50px;
+    margin: 0 1em 0 0;
+    border-radius: 50%;
+  }
+  .rank-color:not(.legend-item) {
+    &:nth-child(1n) {
+      background-color: $rank1;
+    }
+    &:nth-child(2n) {
+      background-color: $rank2;
+    }
+    &:nth-child(3n) {
+      background-color: $rank3;
+    }
+    &:nth-child(4n) {
+      background-color: $rank4;
+    }
+    &:nth-child(5n) {
+      background-color: $rank5;
+    }
+    &:nth-child(n+6) {
+      background-color: lightgray;
+    }
+  }
+  .legend .rank-color {
+    &:nth-child(1n) > .legend-marker {
+      background-color: $rank1;
+    }
+    &:nth-child(2n) > .legend-marker {
+      background-color: $rank2;
+    }
+    &:nth-child(3n) > .legend-marker {
+      background-color: $rank3;
+    }
+    &:nth-child(4n) > .legend-marker {
+      background-color: $rank4;
+    }
+    &:nth-child(5n) > .legend-marker {
+      background-color: $rank5;
+    }
+    &:nth-child(n+6) > .legend-marker {
+      background-color: lightgray;
+    }
+  }
+
 }

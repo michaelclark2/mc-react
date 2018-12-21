@@ -12,14 +12,21 @@ class Technologies extends React.Component {
       .then(repos => {
         findLanguages(repos)
           .then(languages => {
-            this.setState({languages})
-          })
+            this.setState({languages});
+          });
       });
   }
   render () {
     return (
       <div className="Technologies">
-        <TechChart data={this.state.languages} />
+        <h2 className="title is-2">Skills and Technologies</h2>
+        <div className="columns">
+          <div className="column">
+          </div>
+          <div className="column">
+            <TechChart data={this.state.languages} />
+          </div>
+        </div>
       </div>
     );
   }
