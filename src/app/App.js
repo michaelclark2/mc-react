@@ -8,6 +8,7 @@ import Projects from '../components/Projects/Projects';
 import Contact from '../components/Contact/Contact';
 
 import connection from '../firebase/connection';
+import Blog from '../components/Blog/Blog';
 connection();
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
               <Route path='/' exact component={About} />
               <Route path='/projects' component={Projects} />
               <Route path='/contact' component={Contact} />
+              <Route path='/blog' component={Blog} />
             </Switch>
           </main>
         </div>
