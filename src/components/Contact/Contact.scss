@@ -1,21 +1,24 @@
 @import '../../styles/variables';
 
 .Contact {
-  aside {
-    background-color: $dark-color;
-    .title {
-      color: $main-color;
-    }
-  }
+  padding-top: 0;
+  padding-bottom: 0;
   .menu {
     padding: 1em;
-    border: 1px solid $accent-color;
+    margin: 1em auto;
+    border: 1px solid $dark-color;
     border-radius: 4px;
     a {
-      color: $main-color;
+      color: $dark-color;
+      fill: $dark-color;
       &:not(.is-active):hover {
-        color: $dark-color;
+        background-color: $dark-color;
+        color: $main-color;
       }
     }
+  }
+  .menu-list {
+    display: flex;
+    justify-content: space-evenly;
   }
 }

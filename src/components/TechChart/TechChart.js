@@ -23,7 +23,7 @@ class TechChart extends React.Component {
     return this.sortData(data).map(item => {
       const percent = (item.lines / totalLines) * 100;
       return (
-        <div className="rank-color legend-item">
+        <div key={item.language + item.lines} className="rank-color legend-item">
           <div className="legend-marker"></div>
           <h6 className="title is-6">{item.language}: <small>{percent.toFixed(2) + '%'}</small></h6>
         </div>
