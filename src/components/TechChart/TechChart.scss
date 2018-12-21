@@ -15,13 +15,24 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    border: 1px solid darken($main-color, 20%)
+    border: 1px solid darken($main-color, 20%);
+    border-top: none;
   }
   .legend-item {
     margin: 1em;
     display: flex;
     flex-flow: row;
     align-items: center;
+    .title {
+      display:flex;
+      align-items: baseline;
+      flex-flow: column;
+    }
+    @media (max-width:768px) {
+      .title {
+        font-size: .75em;
+      }
+    }
   }
   .legend-marker {
     height: 25px;
@@ -46,7 +57,7 @@
       background-color: $rank5;
     }
     &:nth-child(n+6) {
-      background-color: lightgray;
+      background-color: $unrank;
     }
   }
   .legend .rank-color {
@@ -66,7 +77,7 @@
       background-color: $rank5;
     }
     &:nth-child(n+6) > .legend-marker {
-      background-color: lightgray;
+      background-color: $unrank;
     }
   }
 

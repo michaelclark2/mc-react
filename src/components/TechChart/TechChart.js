@@ -13,9 +13,6 @@ class TechChart extends React.Component {
     const totalLines = data.reduce((acc, curr) => acc += curr.lines, 0);
     return this.sortData(data).map(item => {
       const percent = (item.lines / totalLines) * 100;
-      if (percent < 1) {
-        return null;
-      }
       return (
         <div key={item.language} className="bar rank-color" style={{width: percent + '%'}}></div>
       );
@@ -28,7 +25,7 @@ class TechChart extends React.Component {
       return (
         <div className="rank-color legend-item">
           <div className="legend-marker"></div>
-          <h6 className="">{item.language}: {percent.toFixed(2) + '%'}</h6>
+          <h6 className="title is-6">{item.language}: <small>{percent.toFixed(2) + '%'}</small></h6>
         </div>
       );
     });
@@ -37,15 +34,14 @@ class TechChart extends React.Component {
     const {data} = this.props;
 
     return (
-      <div className="TechChart">
-        <h4>The languages I like to write</h4>
-        <h4>Data is provided from my GitHub account</h4>
+      <div className="TechChart has-text-centered">
         <div className="chart">
           {this.makeBars(data)}
         </div>
         <div className="legend">
           {this.makeLegend(data)}
         </div>
+        <small>The current languages I am writing in, by number of lines.  Data is provided from my GitHub account.</small>
       </div>
     );
   }

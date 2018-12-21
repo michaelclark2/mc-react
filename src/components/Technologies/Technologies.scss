@@ -1,2 +1,19 @@
 .Technologies {
+  .title.is-4 {
+    margin: 1em 0;
+  }
+  .other-tech {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    .tech-item {
+      margin: 1em;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      i {
+        font-size: 3em;
+      }
+    }
+  }
 }

@@ -20,7 +20,7 @@ class Technologies extends React.Component {
   render () {
     return (
       <div className="Technologies section">
-        <h2 className="title is-2">Skills and Technologies</h2>
+        <h2 className="title is-2 has-text-centered">Skills and Technologies</h2>
         {
           this.state.isLoading ? (
             <h5 className="title is-5 has-text-centered">Loading data from GitHub...</h5>
@@ -28,6 +28,41 @@ class Technologies extends React.Component {
             <TechChart data={this.state.languages} />
           )
         }
+        <h4 className="title is-4 has-text-centered">Other things I use</h4>
+        <div className="other-tech">
+          <div className="tech-item">
+            <i class="devicon-react-original colored"></i>
+            <h5 className="title is-5">React</h5>
+          </div>
+          <div className="tech-item">
+            <i class="devicon-jquery-plain colored"></i>
+            <h5 className="title is-5">jQuery</h5>
+          </div>
+          <div className="tech-item">
+            <i className="fas fa-database"></i>
+            <h5 className="title is-5">SQL Server</h5>
+          </div>
+          <div className="tech-item">
+            <i class="devicon-bootstrap-plain colored"></i>
+            <h5 className="title is-5">Bootstrap</h5>
+          </div>
+          <div className="tech-item">
+            <i class="devicon-sass-original colored"></i>
+            <h5 className="title is-5">Sass</h5>
+          </div>
+          <div className="tech-item">
+            <i class="devicon-git-plain colored"></i>
+            <h5 className="title is-5">git</h5>
+          </div>
+          <div className="tech-item">
+            <i class="devicon-webpack-plain colored"></i>
+            <h5 className="title is-5">Webpack</h5>
+          </div>
+          <div className="tech-item">
+            <i class="devicon-visualstudio-plain colored"></i>
+            <h5 className="title is-5">Visual Studio</h5>
+          </div>
+        </div>
       </div>
     );
   }
