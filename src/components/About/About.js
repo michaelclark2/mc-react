@@ -6,10 +6,10 @@ class About extends React.Component {
   render () {
     return (
       <div className="About">
-        <figure className="image profile">
+        <figure className="image profile section">
           <img className="is-rounded" src="https://picsum.photos/500/500/?random" alt="profile pic"/>
         </figure>
-        <div className="about-me">
+        <div className="about-me section">
           <div className="intro has-text-centered">
             <h3 className="title">Hi</h3>
             <h5 className="subtitle">Let's build things!</h5>

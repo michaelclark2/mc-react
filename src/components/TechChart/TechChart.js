@@ -17,7 +17,7 @@ class TechChart extends React.Component {
         return null;
       }
       return (
-        <div key={item.language} className="bar rank-color" style={{height: percent + '%'}}></div>
+        <div key={item.language} className="bar rank-color" style={{width: percent + '%'}}></div>
       );
     });
   }
@@ -40,15 +40,11 @@ class TechChart extends React.Component {
       <div className="TechChart">
         <h4>The languages I like to write</h4>
         <h4>Data is provided from my GitHub account</h4>
-        <div className="columns">
-          <div className="column">
-            {this.makeBars(data)}
-          </div>
-          <div className="column">
-            <div className="legend">
-              {this.makeLegend(data)}
-            </div>
-          </div>
+        <div className="chart">
+          {this.makeBars(data)}
+        </div>
+        <div className="legend">
+          {this.makeLegend(data)}
         </div>
       </div>
     );

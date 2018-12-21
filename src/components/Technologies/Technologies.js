@@ -5,28 +5,29 @@ import {getRepos, findLanguages} from '../../api/github';
 
 class Technologies extends React.Component {
   state = {
-    languages: []
+    languages: [],
+    isLoading: true
   }
   componentDidMount () {
     getRepos()
       .then(repos => {
         findLanguages(repos)
           .then(languages => {
-            this.setState({languages});
+            this.setState({languages, isLoading: false});
           });
       });
   }
   render () {
     return (
-      <div className="Technologies">
+      <div className="Technologies section">
         <h2 className="title is-2">Skills and Technologies</h2>
-        <div className="columns">
-          <div className="column">
-          </div>
-          <div className="column">
+        {
+          this.state.isLoading ? (
+            <h5 className="title is-5 has-text-centered">Loading data from GitHub...</h5>
+          ) : (
             <TechChart data={this.state.languages} />
-          </div>
-        </div>
+          )
+        }
       </div>
     );
   }
