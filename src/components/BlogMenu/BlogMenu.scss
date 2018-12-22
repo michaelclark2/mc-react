@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+.BlogMenu {
+  &.menu {
+    padding: 1em;
+    border: 1px solid $accent-color;
+    border-radius: 4px;
+    .is-active {
+      background-color: $highlight-color;
+    }
+    button {
+      margin-bottom: 1em;
+    }
+    a {
+      color: $main-color;
+      &:not(.is-active):hover {
+        color: $dark-color;
+      }
+    }
+  }
+  .menu-label {
+    background-color: $accent-color;
+    color: $dark-color;
+
+  }
+  .menu-list li ul {
+    border-color: $accent-color;
+
+  }
+  .blog-title {
+    overflow-wrap: break-word;
+    &:not(.is-active):hover {
+      color: $dark-color;
+    }
+  }
+}
