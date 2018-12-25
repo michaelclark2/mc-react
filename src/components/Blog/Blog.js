@@ -26,18 +26,16 @@ class Blog extends React.Component {
       );
     });
     return (
-      <div className="Blog columns">
-        <aside className="column is-3">
-          <h1 className="title is-3">Blog</h1>
-          <BlogMenu
-            viewAll={() => this.setState({selectedBlog: ''})}
-            selectBlog={this.selectBlog}
-            blogs={this.state.blogs}
-          />
-        </aside>
-        <main className="column">
+      <div className="Blog section">
+        <BlogMenu
+          viewAll={() => this.setState({selectedBlog: ''})}
+          selectBlog={this.selectBlog}
+          blogs={this.state.blogs}
+        />
+        <div className="blog-container">
+
           {this.state.selectedBlog ? blogPosts.filter(component => component.props.blog.id === this.state.selectedBlog) : blogPosts}
-        </main>
+        </div>
       </div>
     );
   }

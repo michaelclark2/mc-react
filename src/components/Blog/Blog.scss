@@ -1,14 +1,17 @@
 @import '../../styles/variables';
 .Blog {
+  margin-top: 0;
   color: $text-color;
-  main {
-    overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  .blog-container {
+    flex: 3;
   }
-  aside {
-    overflow-y: auto;
-    background-color: $dark-color;
-    .title {
-      color: $main-color;
+  @media (max-width:768px) {
+    flex-flow: column;
+    align-items: initial;
+    .blog-container {
+      flex: 0;
     }
   }
 }
