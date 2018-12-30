@@ -3,7 +3,7 @@
 
 .Header {
   font-family: Rubik;
-  background-color: lighten($main-color, 20%);
+  background-color: $main-color;
   position: fixed;
   top: 0;
   width: 100%;
@@ -12,7 +12,6 @@
   align-items: center;
   justify-content: space-between;
   z-index: 5;
-  box-shadow: $box-shadow;
 
   @keyframes shrink {
     0% {
@@ -55,14 +54,22 @@
       font-weight: 900;
       color: $dark-color;
       margin: 0 10px;
-      @media (max-width:768px) {
-        font-size: 1.5em;
-      }
+
     }
   }
 
   h2.subtitle {
     text-align: center;
-    letter-spacing: .25em;
+    letter-spacing: .5em;
+  }
+  @media (max-width:768px) {
+    h1 {
+      a {
+        font-size: 1.5em;
+      }
+    }
+    h2.subtitle {
+      letter-spacing: .25em;
+    }
   }
 }

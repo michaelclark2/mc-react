@@ -1,4 +1,7 @@
+@import '../../styles/variables';
+
 .Technologies {
+  background-color: $light-color;
   .title.is-4 {
     margin: 1em 0;
   }

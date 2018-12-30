@@ -1,7 +1,23 @@
 @import '../../styles/variables';
 .About {
+  color: $dark-color;
+  .hero-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .title {
+    color: $dark-color;
+  }
+  .subtitle {
+    color:  desaturate($dark-color, 40)
+  }
   .profile {
     padding: 2em;
+    max-width: 500px;
+    margin: 0 auto;
+    img {
+      min-width: 100%;
+    }
   }
   .intro {
     margin: 2em 0;
