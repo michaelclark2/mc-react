@@ -1,5 +1,6 @@
 import React from 'react';
 import './TechChart.scss';
+import {colors} from '../../constants';
 
 class TechChart extends React.Component {
 
@@ -13,8 +14,9 @@ class TechChart extends React.Component {
     const totalLines = data.reduce((acc, curr) => acc += curr.lines, 0);
     return this.sortData(data).map(item => {
       const percent = (item.lines / totalLines) * 100;
+      const color = colors[item.language];
       return (
-        <div key={item.language} className="bar rank-color" style={{width: percent + '%'}}></div>
+        <div key={item.language} style={{backgroundColor: color, width: percent + '%'}} className="bar rank-color"></div>
       );
     });
   }
@@ -22,9 +24,10 @@ class TechChart extends React.Component {
     const totalLines = data.reduce((acc, curr) => acc += curr.lines, 0);
     return this.sortData(data).map(item => {
       const percent = (item.lines / totalLines) * 100;
+      const color = colors[item.language];
       return (
         <div key={item.language + item.lines} className="rank-color legend-item">
-          <div className="legend-marker"></div>
+          <div className="legend-marker" style={{backgroundColor: color}}></div>
           <h6 className="title is-6">{item.language}: <small>{percent.toFixed(2) + '%'}</small></h6>
         </div>
       );

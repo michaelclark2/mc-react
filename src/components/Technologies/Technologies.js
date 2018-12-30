@@ -62,6 +62,10 @@ class Technologies extends React.Component {
             <i className="devicon-visualstudio-plain colored"></i>
             <h5 className="title is-5">Visual Studio</h5>
           </div>
+          <div className="tech-item">
+            <i class="devicon-linux-plain colored"></i>
+            <h5 className="title is-5">Linux</h5>
+          </div>
         </div>
       </div>
     );

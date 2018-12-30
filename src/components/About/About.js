@@ -6,15 +6,21 @@ class About extends React.Component {
   render () {
     return (
       <div className="About">
-        <figure className="image profile section">
-          <img className="is-rounded" src="https://picsum.photos/500/500/?random" alt="profile pic"/>
-        </figure>
         <div className="about-me section">
-          <div className="intro has-text-centered">
-            <h3 className="title">Hi</h3>
-            <h5 className="subtitle">Let's build things!</h5>
+          <div className="columns">
+            <div className="column">
+              <figure className="image profile">
+                <img className="is-rounded" src="https://picsum.photos/500/500/?random" alt="profile pic"/>
+              </figure>
+            </div>
+            <div className="column">
+              <div className="intro has-text-centered">
+                <h3 className="title">Hi</h3>
+                <h5 className="subtitle">Let's build things!</h5>
+              </div>
+              <p>I enjoy creating unique and enjoyable experiences. A graphic artist turned developer, software development was the only thing that seemed to satisfy my constant desire to learn and experiment.</p>
+            </div>
           </div>
-          <p>A graphic artist turned developer, I enjoy creating unique and enjoyable experiences.  Software development was the only thing that seemed to satisfy my constant desire to learn and experiment, and it has led me down some very interesting paths.  If you want to know more about me and my journey, check out the projects I've done or the articles I have written or just send me an email!</p>
         </div>
         <Technologies />
       </div>

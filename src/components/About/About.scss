@@ -1,11 +1,10 @@
 @import '../../styles/variables';
 .About {
   .profile {
-    margin: 3em auto;
-    max-width: 500px;
+    padding: 2em;
   }
   .intro {
-    margin-bottom: 2em;
+    margin: 2em 0;
     .title {
       font-size: 4em;
     }
