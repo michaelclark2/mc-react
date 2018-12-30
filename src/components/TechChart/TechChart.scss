@@ -14,12 +14,11 @@
     height: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
-    border: 1px solid darken($main-color, 20%);
-    border-top: none;
+    justify-content: space-between;
   }
   .legend-item {
-    margin: 1em;
+    margin: 1em 0;
+    padding: .5em;
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -29,9 +28,8 @@
       flex-flow: column;
     }
     @media (max-width:768px) {
-      .title {
-        font-size: .75em;
-      }
+      margin: 0;
+      width: 50%;
     }
   }
   .legend-marker {
@@ -39,45 +37,10 @@
     width: 25px;
     margin: 0 .5em 0 0;
     border-radius: 50%;
-  }
-  .rank-color:not(.legend-item) {
-    &:nth-child(1n) {
-      background-color: $rank1;
-    }
-    &:nth-child(2n) {
-      background-color: $rank2;
-    }
-    &:nth-child(3n) {
-      background-color: $rank3;
-    }
-    &:nth-child(4n) {
-      background-color: $rank4;
-    }
-    &:nth-child(5n) {
-      background-color: $rank5;
-    }
-    &:nth-child(n+6) {
-      background-color: $unrank;
-    }
-  }
-  .legend .rank-color {
-    &:nth-child(1n) > .legend-marker {
-      background-color: $rank1;
-    }
-    &:nth-child(2n) > .legend-marker {
-      background-color: $rank2;
-    }
-    &:nth-child(3n) > .legend-marker {
-      background-color: $rank3;
-    }
-    &:nth-child(4n) > .legend-marker {
-      background-color: $rank4;
-    }
-    &:nth-child(5n) > .legend-marker {
-      background-color: $rank5;
-    }
-    &:nth-child(n+6) > .legend-marker {
-      background-color: $unrank;
+    box-shadow: $box-shadow;
+    @media (max-width:768px) {
+      height: 15px;
+      width: 15px;
     }
   }
 

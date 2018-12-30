@@ -1,18 +1,17 @@
 @import '../../styles/variables';
 
 .Contact {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   .menu {
     padding: 1em;
     margin: 1em auto;
-    border: 1px solid $dark-color;
+    border: 1px solid $highlight-color;
     border-radius: 4px;
     a {
       color: $dark-color;
-      fill: $dark-color;
       &:not(.is-active):hover {
-        background-color: $dark-color;
+        background-color: $accent-color;
         color: $main-color;
       }
     }

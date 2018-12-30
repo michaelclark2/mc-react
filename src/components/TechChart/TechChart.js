@@ -1,5 +1,6 @@
 import React from 'react';
 import './TechChart.scss';
+import {colors} from '../../constants';
 
 class TechChart extends React.Component {
 
@@ -13,8 +14,9 @@ class TechChart extends React.Component {
     const totalLines = data.reduce((acc, curr) => acc += curr.lines, 0);
     return this.sortData(data).map(item => {
       const percent = (item.lines / totalLines) * 100;
+      const color = colors[item.language];
       return (
-        <div key={item.language} className="bar rank-color" style={{width: percent + '%'}}></div>
+        <div key={item.language} style={{backgroundColor: color, width: percent + '%'}} className="bar"></div>
       );
     });
   }
@@ -22,10 +24,14 @@ class TechChart extends React.Component {
     const totalLines = data.reduce((acc, curr) => acc += curr.lines, 0);
     return this.sortData(data).map(item => {
       const percent = (item.lines / totalLines) * 100;
+      const color = colors[item.language];
       return (
-        <div key={item.language + item.lines} className="rank-color legend-item">
-          <div className="legend-marker"></div>
-          <h6 className="title is-6">{item.language}: <small>{percent.toFixed(2) + '%'}</small></h6>
+        <div key={item.language + item.lines} className="legend-item">
+          <div className="legend-marker" style={{backgroundColor: color}}></div>
+          <div>
+            <h6 className="title is-6">{item.language}</h6>
+            <h6 className="subtitle is-6">{percent.toFixed(2) + '%'}</h6>
+          </div>
         </div>
       );
     });
@@ -41,7 +47,6 @@ class TechChart extends React.Component {
         <div className="legend">
           {this.makeLegend(data)}
         </div>
-        <small>The current languages I am writing in, by number of lines.  Data is provided from my GitHub account.</small>
       </div>
     );
   }

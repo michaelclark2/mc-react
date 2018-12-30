@@ -1,22 +1,76 @@
 import React from 'react';
-import Technologies from '../Technologies/Technologies';
+import { Link } from 'react-router-dom';
 import './About.scss';
+import * as profileImg from '../../img/profile.jpg';
 
 class About extends React.Component {
   render () {
     return (
       <div className="About">
-        <figure className="image profile section">
-          <img className="is-rounded" src="https://picsum.photos/500/500/?random" alt="profile pic"/>
-        </figure>
-        <div className="about-me section">
-          <div className="intro has-text-centered">
-            <h3 className="title">Hi</h3>
-            <h5 className="subtitle">Let's build things!</h5>
+        <div className="hi has-text-centered section">
+          <div className="hero is-fullheight">
+            <div className="hero-body">
+              <div className="container is-fluid">
+                <h3 className="title">Hi</h3>
+              </div>
+              <i className="fas fa-arrow-down down"></i>
+            </div>
           </div>
-          <p>A graphic artist turned developer, I enjoy creating unique and enjoyable experiences.  Software development was the only thing that seemed to satisfy my constant desire to learn and experiment, and it has led me down some very interesting paths.  If you want to know more about me and my journey, check out the projects I've done or the articles I have written or just send me an email!</p>
         </div>
-        <Technologies />
+        <div className="intro has-text-centered section">
+          <div className="hero is-fullheight">
+            <div className="hero-body">
+              <div className="container is-fluid">
+                <figure className="image profile">
+                  <img className="is-rounded" src={profileImg} alt="profile pic" />
+                </figure>
+                <h3 className="title is-1">This is me</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="artist section">
+          <div className="hero is-fullheight">
+            <div className="hero-body">
+              <div className="container is-fluid">
+                <h3 className="title is-1">As an artist,</h3>
+                <p>I enjoy creating unique and enjoyable experiences. A graphic artist turned developer, creative problem solving is what I do best.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="activist section">
+          <div className="hero is-fullheight">
+            <div className="hero-body">
+              <div className="container is-fluid">
+                <h3 className="title is-1">As an activist,</h3>
+                <p>I thrive on making things that make a difference.  I've always wanted to change the world, and I have the tools and determination to do so.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="adventurer section">
+          <div className="hero is-fullheight">
+            <div className="hero-body">
+              <div className="container is-fluid">
+                <h3 className="title is-1">As an adventurer,</h3>
+                <p>I consistently challenge myself to be better.  Software development seems to be the only thing that satisfies my constant desire to learn and experiment.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="closing section">
+          <div className="hero is-fullheight">
+            <div className="hero-body">
+              <div className="container is-fluid">
+                <h3 className="title is-1"><Link to="/skills">This is what I know</Link></h3>
+                <h3 className="title is-1"><Link to="/projects">This is what I do</Link></h3>
+                <h3 className="title is-1"><Link to="/blog">This is what I said</Link></h3>
+                <h3 className="title is-1"><Link to="/contact">This is how to reach me</Link></h3>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     );

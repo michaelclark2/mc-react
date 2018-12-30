@@ -1,4 +1,10 @@
 @import '../../styles/variables';
 .Projects {
-  padding: 2em;
+  button.slick-next:before,
+  button.slick-prev:before {
+    color: $accent-color;
+  }
+  .slick-slide {
+    padding: 1em;
+  }
 }

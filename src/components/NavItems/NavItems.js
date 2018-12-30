@@ -7,6 +7,9 @@ class NavItems extends React.Component {
     return (
       <ul className='NavItems'>
         <li>
+          <NavLink to="/skills">Skills</NavLink>
+        </li>
+        <li>
           <NavLink to="/projects">Projects</NavLink>
         </li>
         <li>

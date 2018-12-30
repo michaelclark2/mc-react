@@ -9,13 +9,14 @@ import Contact from '../components/Contact/Contact';
 
 import connection from '../firebase/connection';
 import Blog from '../components/Blog/Blog';
+import Technologies from '../components/Technologies/Technologies';
 connection();
 
 class App extends React.Component {
 
   componentDidMount () {
     const headerHeight = document.querySelector('.Header').offsetHeight;
-    document.querySelector('main').style.marginTop = (headerHeight + 20) + 'px';
+    document.querySelector('main').style.marginTop = (headerHeight) + 'px';
   }
 
   render () {
@@ -27,6 +28,7 @@ class App extends React.Component {
             <Switch>
               <Route path='/' exact component={About} />
               <Route path='/projects' component={Projects} />
+              <Route path='/skills' component={Technologies} />
               <Route path='/contact' component={Contact} />
               <Route path='/blog' component={Blog} />
             </Switch>

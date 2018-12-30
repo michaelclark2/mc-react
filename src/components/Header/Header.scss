@@ -1,9 +1,7 @@
 @import '../../styles/variables';
-@import url('https://fonts.googleapis.com/css?family=Rubik');
 
 .Header {
-  font-family: Rubik;
-  background-color: lighten($main-color, 20%);
+  background-color: $main-color;
   position: fixed;
   top: 0;
   width: 100%;
@@ -14,29 +12,7 @@
   z-index: 5;
   box-shadow: $box-shadow;
 
-  @keyframes shrink {
-    0% {
-      max-height: 100px;
-      opacity: 1;
-    }
-    75% {
-      opacity: 0;
-    }
-    100% {
-      max-height: 0px;
-      opacity: 0;
-    }
-  }
-  @keyframes unshrink {
-    0% {
-      max-height: 0px;
-      opacity: 0;
-    }
-    100% {
-      max-height: 100px;
-      opacity: 1;
-    }
-  }
+
   .shrink {
     animation: shrink 400ms normal linear forwards;
   }
@@ -55,14 +31,45 @@
       font-weight: 900;
       color: $dark-color;
       margin: 0 10px;
-      @media (max-width:768px) {
-        font-size: 1.5em;
-      }
+
     }
   }
 
   h2.subtitle {
     text-align: center;
-    letter-spacing: .25em;
+    letter-spacing: .5em;
+  }
+  @media (max-width:768px) {
+    h1 {
+      a {
+        font-size: 1.5em;
+      }
+    }
+    h2.subtitle {
+      letter-spacing: .25em;
+    }
+  }
+}
+@keyframes shrink {
+  0% {
+    max-height: 100px;
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    max-height: 0px;
+    opacity: 0;
+  }
+}
+@keyframes unshrink {
+  0% {
+    max-height: 0px;
+    opacity: 0;
+  }
+  100% {
+    max-height: 100px;
+    opacity: 1;
   }
 }
