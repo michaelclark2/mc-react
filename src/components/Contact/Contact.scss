@@ -11,7 +11,7 @@
     a {
       color: $dark-color;
       &:not(.is-active):hover {
-        background-color: $highlight-color;
+        background-color: $accent-color;
         color: $main-color;
       }
     }

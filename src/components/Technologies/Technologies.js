@@ -19,52 +19,71 @@ class Technologies extends React.Component {
   }
   render () {
     return (
-      <div className="Technologies section">
-        <h2 className="title is-2 has-text-centered">Skills and Technologies</h2>
-        {
-          this.state.isLoading ? (
-            <h5 className="title is-5 has-text-centered">Loading data from GitHub...</h5>
-          ) : (
-            <TechChart data={this.state.languages} />
-          )
-        }
-        <h4 className="title is-4 has-text-centered">Other things I use</h4>
-        <div className="other-tech">
-          <div className="tech-item">
-            <i className="devicon-react-original colored"></i>
-            <h5 className="title is-5">React</h5>
+      <div className="Technologies">
+        <div className="languages section">
+          <div className="hero is-medium">
+            <div className="hero-body">
+              <h2 className="title is-2 has-text-centered">What I'm writing</h2>
+              <h4 className="subtitle has-text-centered">The current languages I am writing in, by number of lines.  Data is provided from GitHub.</h4>
+              {
+                this.state.isLoading ? (
+                  <h5 className="title is-5 has-text-centered">Loading data from GitHub...</h5>
+                ) : (
+                  <TechChart data={this.state.languages} />
+                )
+              }
+            </div>
           </div>
-          <div className="tech-item">
-            <i className="devicon-jquery-plain colored"></i>
-            <h5 className="title is-5">jQuery</h5>
-          </div>
-          <div className="tech-item">
-            <i className="fas fa-database"></i>
-            <h5 className="title is-5">SQL Server</h5>
-          </div>
-          <div className="tech-item">
-            <i className="devicon-bootstrap-plain colored"></i>
-            <h5 className="title is-5">Bootstrap</h5>
-          </div>
-          <div className="tech-item">
-            <i className="devicon-sass-original colored"></i>
-            <h5 className="title is-5">Sass</h5>
-          </div>
-          <div className="tech-item">
-            <i className="devicon-git-plain colored"></i>
-            <h5 className="title is-5">git</h5>
-          </div>
-          <div className="tech-item">
-            <i className="devicon-webpack-plain colored"></i>
-            <h5 className="title is-5">Webpack</h5>
-          </div>
-          <div className="tech-item">
-            <i className="devicon-visualstudio-plain colored"></i>
-            <h5 className="title is-5">Visual Studio</h5>
-          </div>
-          <div className="tech-item">
-            <i className="devicon-linux-plain colored"></i>
-            <h5 className="title is-5">Linux</h5>
+
+        </div>
+        <div className="libraries section">
+          <div className="hero">
+            <div className="hero-body">
+              <h2 className="title is-2 has-text-centered">What I'm using</h2>
+              <h4 className="subtitle has-text-centered">Some of my favorite tools, libraries, and frameworks.</h4>
+              <div className="other-tech">
+                <div className="tech-item">
+                  <i className="devicon-react-original colored"></i>
+                  <h6 className="title is-6">React</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-jquery-plain colored"></i>
+                  <h6 className="title is-6">jQuery</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="fas fa-database"></i>
+                  <h6 className="title is-6">SQL Server</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-bootstrap-plain colored"></i>
+                  <h6 className="title is-6">Bootstrap</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-sass-original colored"></i>
+                  <h6 className="title is-6">Sass</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-git-plain colored"></i>
+                  <h6 className="title is-6">git</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-webpack-plain colored"></i>
+                  <h6 className="title is-6">Webpack</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-visualstudio-plain colored"></i>
+                  <h6 className="title is-6">Visual Studio</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-dot-net-plain colored"></i>
+                  <h6 className="title is-6">ASP.NET Core</h6>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-linux-plain colored"></i>
+                  <h6 className="title is-6">Linux</h6>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

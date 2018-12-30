@@ -34,7 +34,7 @@ class About extends React.Component {
             <div className="hero-body">
               <div className="container is-fluid">
                 <h3 className="title is-1">As an artist,</h3>
-                <p>I enjoy creating unique and enjoyable experiences. A graphic artist turned developer, designing impactful and memorable materials is almost second nature.</p>
+                <p>I enjoy creating unique and enjoyable experiences. A graphic artist turned developer, creative problem solving is what I do best.</p>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@ class About extends React.Component {
             <div className="hero-body">
               <div className="container is-fluid">
                 <h3 className="title is-1">As an activist,</h3>
-                <p>I thrive on making things that make a difference.  I've always wanted to change the world, and I have the tools and determination to change it.</p>
+                <p>I thrive on making things that make a difference.  I've always wanted to change the world, and I have the tools and determination to do so.</p>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@ class About extends React.Component {
                 <h3 className="title is-1"><Link to="/skills">This is what I know</Link></h3>
                 <h3 className="title is-1"><Link to="/projects">This is what I do</Link></h3>
                 <h3 className="title is-1"><Link to="/blog">This is what I said</Link></h3>
-                <h3 className="title is-1"><Link to="/contact">This is how to reach out</Link></h3>
+                <h3 className="title is-1"><Link to="/contact">This is how to reach me</Link></h3>
               </div>
             </div>
           </div>

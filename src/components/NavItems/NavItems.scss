@@ -20,7 +20,7 @@
       &.active {
         font-weight: bold;
         color: $highlight-color;
-        border-bottom: 1px solid $light-color;
+        border-bottom: 2px solid $light-color;
       }
       @keyframes pullup {
         from {

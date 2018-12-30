@@ -1,9 +1,6 @@
 @import '../../styles/variables';
 
 .Technologies {
-  .title.is-4 {
-    margin: 1em 0;
-  }
   .other-tech {
     display: flex;
     flex-flow: row wrap;
@@ -13,8 +10,11 @@
       display: flex;
       flex-flow: column;
       align-items: center;
+      .title {
+        margin-top: 1em;
+      }
       i {
-        font-size: 3em;
+        font-size: 5em;
       }
     }
   }

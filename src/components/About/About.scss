@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    font-size: 4em;
+    font-size: 3em;
     color: $highlight-color;
     animation: bounce infinite linear 1s;
   }
@@ -18,14 +18,14 @@
   }
   .title {
     color: $dark-color;
-  }
-  .subtitle {
-    color:  desaturate($dark-color, 40)
+    text-shadow: $box-shadow;
   }
   .profile {
     margin: 0 auto;
     max-width: 500px;
+    margin-bottom: 1em;
     img {
+      box-shadow: $box-shadow;
       object-fit: cover;
     }
   }
@@ -76,9 +76,9 @@
   }
 
   .closing {
-    // padding-bottom: 0;
     .title {
       text-decoration: underline;
+      text-shadow: none;
       &:nth-child(1) a {
         color: $light-color;
       }
