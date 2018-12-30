@@ -1,13 +1,21 @@
+@import '../../styles/variables';
+
 .ProjectCard {
+  background-color: $main-color;
   .image > img {
     object-fit: contain;
   }
   .card-header-title {
     justify-content: center;
+    background-color: $highlight-color;
   }
   .card-footer-item {
+    background-color: $light-color;
+    color: $dark-color;
+    border-color: darken($light-color, 15%);
     &:hover {
-      background-color: #eee;
+      color: $dark-color;
+      background-color: $accent-color;
     }
   }
   .project {

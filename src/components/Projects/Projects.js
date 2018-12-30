@@ -40,7 +40,7 @@ class Projects extends React.Component {
       adaptiveHeight: true
     };
     return (
-      <div className="Projects">
+      <div className="Projects section">
         <Slider {...settings}>
           {projectCards}
         </Slider>
