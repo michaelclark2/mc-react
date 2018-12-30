@@ -9,7 +9,7 @@
     border: 1px solid $highlight-color;
     border-radius: 4px;
     a {
-      color: $highlight-color;
+      color: $dark-color;
       &:not(.is-active):hover {
         background-color: $highlight-color;
         color: $main-color;

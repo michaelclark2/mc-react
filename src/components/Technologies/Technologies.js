@@ -63,7 +63,7 @@ class Technologies extends React.Component {
             <h5 className="title is-5">Visual Studio</h5>
           </div>
           <div className="tech-item">
-            <i class="devicon-linux-plain colored"></i>
+            <i className="devicon-linux-plain colored"></i>
             <h5 className="title is-5">Linux</h5>
           </div>
         </div>

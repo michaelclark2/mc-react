@@ -1,8 +1,6 @@
 @import '../../styles/variables';
-@import url('https://fonts.googleapis.com/css?family=Rubik');
 
 .Header {
-  font-family: Rubik;
   background-color: $main-color;
   position: fixed;
   top: 0;
@@ -12,30 +10,9 @@
   align-items: center;
   justify-content: space-between;
   z-index: 5;
+  box-shadow: $box-shadow;
 
-  @keyframes shrink {
-    0% {
-      max-height: 100px;
-      opacity: 1;
-    }
-    75% {
-      opacity: 0;
-    }
-    100% {
-      max-height: 0px;
-      opacity: 0;
-    }
-  }
-  @keyframes unshrink {
-    0% {
-      max-height: 0px;
-      opacity: 0;
-    }
-    100% {
-      max-height: 100px;
-      opacity: 1;
-    }
-  }
+
   .shrink {
     animation: shrink 400ms normal linear forwards;
   }
@@ -71,5 +48,28 @@
     h2.subtitle {
       letter-spacing: .25em;
     }
+  }
+}
+@keyframes shrink {
+  0% {
+    max-height: 100px;
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    max-height: 0px;
+    opacity: 0;
+  }
+}
+@keyframes unshrink {
+  0% {
+    max-height: 0px;
+    opacity: 0;
+  }
+  100% {
+    max-height: 100px;
+    opacity: 1;
   }
 }

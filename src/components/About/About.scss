@@ -1,9 +1,20 @@
 @import '../../styles/variables';
 .About {
+  line-height: 2em;
+  font-size: 1.25em;
   color: $dark-color;
-  .hero-body {
-    padding-left: 0;
-    padding-right: 0;
+  .down {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 4em;
+    color: $highlight-color;
+    animation: bounce infinite linear 1s;
+  }
+  .hero.is-fullheight {
+    min-height: calc(100vh - 130px);
   }
   .title {
     color: $dark-color;
@@ -12,24 +23,90 @@
     color:  desaturate($dark-color, 40)
   }
   .profile {
-    padding: 2em;
-    max-width: 500px;
     margin: 0 auto;
+    max-width: 500px;
     img {
-      min-width: 100%;
+      object-fit: cover;
     }
   }
-  .intro {
-    margin: 2em 0;
+  .hero-body {
+    .title {
+      @media (max-width: 768px) {
+        font-size: 2em;
+      }
+    }
+    p {
+      font-size: 1.25em;
+      letter-spacing: -1px;
+      font-family: $serif;
+      @media (max-width: 768px) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .hi {
+    background-color: $light-color;
     .title {
       font-size: 4em;
     }
-    .subtitle {
-      font-size: 2em;
+  }
+  .intro {
+    .title {
+      color: $light-color;
+    }
+    background-color: $highlight-color;
+  }
+  .artist {
+    background-color: $accent-color;
+  }
+  .activist {
+    .title {
+      color: $light-color;
+    }
+    color: $light-color;
+    background-color: $dark-color;
+  }
+  .adventurer {
+    .title {
+      color: $accent-color;
+    }
+    color: $accent-color;
+    background-color: $light-color;
+  }
+
+  .closing {
+    // padding-bottom: 0;
+    .title {
+      text-decoration: underline;
+      &:nth-child(1) a {
+        color: $light-color;
+      }
+      &:nth-child(2) a {
+        color: $dark-color;
+      }
+      &:nth-child(3) a {
+        color: $highlight-color;
+      }
+      &:nth-child(4) a {
+        color: $accent-color;
+      }
     }
   }
-  .about-me {
-    line-height: 2em;
-    font-size: 1.25em;
+
+}
+
+@keyframes bounce {
+  0% {
+    bottom: 32px
+  }
+  50% {
+    bottom: 12px;
+  }
+  70% {
+    bottom: 24px;
+  }
+  100% {
+    bottom: 32px;
   }
 }

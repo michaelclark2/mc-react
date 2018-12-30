@@ -1,5 +1,6 @@
-@import '../../node_modules/bulma/bulma';
 @import './variables';
+$family-sans-serif: $sans;
+@import '../../node_modules/bulma/bulma';
 
 body,html {
   background-color: $main-color;
