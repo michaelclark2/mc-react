@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './About.scss';
-import * as profileImg from '../../img/profile.jpg';
+import profileImg from '../../img/profile.jpg';
 
 class About extends React.Component {
   render () {
@@ -21,8 +21,8 @@ class About extends React.Component {
           <div className="hero is-fullheight">
             <div className="hero-body">
               <div className="container is-fluid">
-                <figure className="image profile">
-                  <img className="is-rounded" src={profileImg} alt="profile pic" />
+                <figure className="profile">
+                  <img className="" src={profileImg} alt="profile pic" />
                 </figure>
                 <h3 className="title is-1">This is me</h3>
               </div>

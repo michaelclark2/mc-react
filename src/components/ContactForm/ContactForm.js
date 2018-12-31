@@ -9,7 +9,7 @@ class ContactForm extends React.Component {
     email: '',
     subject: '',
     message: '',
-    isSent: false,
+    isSent: false
   }
   inputChange = (e) => {
     const contactForm = {...this.state};
@@ -29,7 +29,7 @@ class ContactForm extends React.Component {
             name: '',
             email: '',
             subject: '',
-            message: '',
+            message: ''
           });
         })
         .catch(err => {
