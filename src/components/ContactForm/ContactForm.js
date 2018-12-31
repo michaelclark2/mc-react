@@ -1,7 +1,7 @@
 import React from 'react';
 import './ContactForm.scss';
 
-import postMessage from '../../firebase/messages';
+import sendEmail from '../../api/email';
 
 class ContactForm extends React.Component {
   state = {
@@ -22,7 +22,7 @@ class ContactForm extends React.Component {
     const msg = this.state;
     if (msg.name && msg.email && msg.subject && msg.message) {
       delete msg.isSent;
-      postMessage(msg)
+      sendEmail(msg)
         .then(() => {
           this.setState({
             isSent: true,
@@ -31,9 +31,6 @@ class ContactForm extends React.Component {
             subject: '',
             message: ''
           });
-        })
-        .catch(err => {
-          console.error('Error sending message', err);
         });
     }
   }

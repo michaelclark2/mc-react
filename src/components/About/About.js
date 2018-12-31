@@ -24,7 +24,7 @@ class About extends React.Component {
                 <figure className="profile">
                   <img className="" src={profileImg} alt="profile pic" />
                 </figure>
-                <h3 className="title is-1">This is me</h3>
+                <h3 className="title is-1">I like to make things</h3>
               </div>
             </div>
           </div>
