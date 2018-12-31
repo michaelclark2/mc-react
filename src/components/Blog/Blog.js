@@ -1,8 +1,9 @@
 import React from 'react';
 import './Blog.scss';
-import {getBlogs} from '../../firebase/blogs';
+import getBlogs from '../../api/blogs';
 import BlogPost from '../BlogPost/BlogPost';
 import BlogMenu from '../BlogMenu/BlogMenu';
+import moment from 'moment';
 
 class Blog extends React.Component {
   state = {
@@ -10,11 +11,18 @@ class Blog extends React.Component {
     selectedBlog: ''
   }
   componentDidMount () {
-    getBlogs().then(blogs => {
-      this.setState({blogs});
-    }).catch(err => {
-      console.error('Error getting blogs', err);
-    });
+    getBlogs()
+      .then(blogs => {
+        blogs.sort((a, b) => {
+          a = moment(a.created_at);
+          b = moment(b.created_at);
+          if (a.isSame(b)) return 0;
+          return a.isBefore(b) ? 1 : -1;
+        });
+        this.setState({blogs});
+      }).catch(err => {
+        console.error('Error getting blogs', err);
+      });
   }
   selectBlog = (e) => {
     this.setState({selectedBlog: e.target.id});
@@ -34,7 +42,7 @@ class Blog extends React.Component {
         />
         <div className="blog-container">
 
-          {this.state.selectedBlog ? blogPosts.filter(component => component.props.blog.id === this.state.selectedBlog) : blogPosts}
+          {this.state.selectedBlog ? blogPosts.filter(component => component.props.blog.id === Number(this.state.selectedBlog)) : blogPosts}
         </div>
       </div>
     );

@@ -35,8 +35,8 @@ class BlogMenu extends React.Component {
     const { blogs } = this.props;
     const blogGroup = [];
     blogs.forEach(blog => {
-      const month = moment(blog.date).month('').format('MMMM');
-      const year = moment(blog.date).format('YYYY');
+      const month = moment(blog.created_at).month('').format('MMMM');
+      const year = moment(blog.created_at).format('YYYY');
       const matchingGroup = blogGroup.find(x => x.month === month && x.year === year);
       if (matchingGroup) {
         matchingGroup.blogs.push(blog);
