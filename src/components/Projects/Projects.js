@@ -3,16 +3,14 @@ import Slider from 'react-slick';
 import './Projects.scss';
 
 import ProjectCard from '../ProjectCard/ProjectCard';
-
-import projectReqs from '../../firebase/projects';
+import getProjects from '../../api/projects';
 
 class Projects extends React.Component {
   state = {
     projects: []
   }
   componentDidMount () {
-    projectReqs
-      .getProjects()
+    getProjects()
       .then(projects => {
         this.setState({projects});
       })
