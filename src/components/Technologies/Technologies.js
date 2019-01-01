@@ -9,6 +9,7 @@ class Technologies extends React.Component {
     isLoading: true
   }
   componentDidMount () {
+    window.scrollTo(0,0);
     getRepos()
       .then(repos => {
         findLanguages(repos)
