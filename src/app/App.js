@@ -7,16 +7,15 @@ import About from '../components/About/About';
 import Projects from '../components/Projects/Projects';
 import Contact from '../components/Contact/Contact';
 
-import connection from '../firebase/connection';
 import Blog from '../components/Blog/Blog';
 import Technologies from '../components/Technologies/Technologies';
-connection();
 
 class App extends React.Component {
 
   componentDidMount () {
     const headerHeight = document.querySelector('.Header').offsetHeight;
     document.querySelector('main').style.marginTop = (headerHeight) + 'px';
+    window.scrollTo(0,1);
   }
 
   render () {
