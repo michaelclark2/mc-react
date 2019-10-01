@@ -1,7 +1,7 @@
 import React from 'react';
 import './ContactForm.scss';
 
-import sendEmail from '../../api/email';
+import {sendEmail} from '../../helpers/api';
 
 class ContactForm extends React.Component {
   state = {

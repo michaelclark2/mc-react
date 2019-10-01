@@ -6,30 +6,33 @@ class TechChart extends React.Component {
 
   sortData = (data) => {
     return data.sort((a, b) => {
-      if (a.lines === b.lines) return 0;
-      return a.lines > b.lines ? -1 : 1;
+      const A = Object.values(a)[0];
+      const B = Object.values(b)[0];
+
+      if (A === B) return 0;
+      return A > B ? -1 : 1;
     });
   }
   makeBars = (data) => {
-    const totalLines = data.reduce((acc, curr) => acc += curr.lines, 0);
-    return this.sortData(data).map(item => {
-      const percent = (item.lines / totalLines) * 100;
-      const color = colors[item.language];
+    const totalLines = (data).reduce((acc, curr) => acc += Object.values(curr)[0], 0);
+    return (data).map(langObj => {
+      const percent = (Object.values(langObj)[0] / totalLines) * 100;
+      const color = colors[Object.keys(langObj)[0]];
       return (
-        <div key={item.language} style={{backgroundColor: color, width: percent + '%'}} className="bar"></div>
+        <div key={Object.keys(langObj)[0]} style={{backgroundColor: color, width: percent + '%'}} className="bar"></div>
       );
     });
   }
   makeLegend = (data) => {
-    const totalLines = data.reduce((acc, curr) => acc += curr.lines, 0);
-    return this.sortData(data).map(item => {
-      const percent = (item.lines / totalLines) * 100;
-      const color = colors[item.language];
+    const totalLines = (data).reduce((acc, curr) => acc += Object.values(curr)[0], 0);
+    return (data).map(langObj => {
+      const percent = (Object.values(langObj)[0] / totalLines) * 100;
+      const color = colors[Object.keys(langObj)[0]];
       return (
-        <div key={item.language + item.lines} className="legend-item">
+        <div key={Object.keys(langObj)[0] + Object.values(langObj)[0]} className="legend-item">
           <div className="legend-marker" style={{backgroundColor: color}}></div>
           <div>
-            <h6 className="title is-6">{item.language}</h6>
+            <h6 className="title is-6">{Object.keys(langObj)[0]}</h6>
             <h6 className="subtitle is-6">{percent.toFixed(2) + '%'}</h6>
           </div>
         </div>
@@ -38,14 +41,14 @@ class TechChart extends React.Component {
   }
   render () {
     const {data} = this.props;
-
+    const sortedData = this.sortData(data);
     return (
       <div className="TechChart has-text-centered">
         <div className="chart">
-          {this.makeBars(data)}
+          {this.makeBars(sortedData)}
         </div>
         <div className="legend">
-          {this.makeLegend(data)}
+          {this.makeLegend(sortedData)}
         </div>
       </div>
     );

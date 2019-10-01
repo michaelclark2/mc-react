@@ -1,7 +1,7 @@
 import React from 'react';
 import './Technologies.scss';
 import TechChart from '../TechChart/TechChart';
-import {getRepos, findLanguages} from '../../api/github';
+import {getCode} from '../../helpers/api';
 
 class Technologies extends React.Component {
   state = {
@@ -10,12 +10,9 @@ class Technologies extends React.Component {
   }
   componentDidMount () {
     window.scrollTo(0,0);
-    getRepos()
-      .then(repos => {
-        findLanguages(repos)
-          .then(languages => {
-            this.setState({languages, isLoading: false});
-          });
+    getCode()
+      .then(languages => {
+        this.setState({languages, isLoading: false});
       });
   }
   render () {
