@@ -22,7 +22,7 @@ class ProjectCard extends React.Component {
                 <p>{project.desc}</p>
                 <div className="techs-used">
                   <p className="title is-4">Technologies Used:</p>
-                  <p className="subtitle is-6 is-italic">{project.techs.map(t => t.name)}</p>
+                  <p className="subtitle is-6 is-italic">{project.techs.map(t => t.name).join(', ')}</p>
                 </div>
               </div>
               <div className="card-footer">
