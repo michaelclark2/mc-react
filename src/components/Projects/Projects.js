@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import './Projects.scss';
 
 import ProjectCard from '../ProjectCard/ProjectCard';
-import getProjects from '../../api/projects';
+import {getProjects} from '../../helpers/api';
 
 class Projects extends React.Component {
   state = {
