@@ -85,7 +85,7 @@ class Technologies extends React.Component {
           </div>
         </div>
         <div className="section">
-          <h6 className="title is-6 has-text-centered">This website was built with React and hosted on Firebase, with a Ruby backend hosted on Heroku.</h6>
+          <h6 className="title is-6 has-text-centered">This website was built with React and hosted on Firebase, with a Python Flask backend hosted on Heroku.</h6>
         </div>
       </div>
     );
